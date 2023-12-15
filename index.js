@@ -25,9 +25,10 @@ class Website{
     }
 
     generateCitation(){
-        return `${this.authorLast}, ${this.authorFirst.charAt(0)}. (${datePublished.getYear()}, ${datePublished.getMonth()} ${datePublished.getDayOfMonth()}). 
+        return `${this.authorLast}, ${this.authorFirst.charAt(0)}. (${this.datePublished.getFullYear()}, ${this.datePublished.getMonth()+1} ${this.datePublished.getDate()+1}). 
         ${this.articleTitle}. ${this.websiteTitle}. ${this.url}`
     }
+
 }
 
 function clearForm(){
@@ -36,7 +37,6 @@ function clearForm(){
 }
 
 function generateBookCitation() {
-    console.log('ehh')
     // document.getElementById('citationResult').innerText = 'hello world'
     // alert('hello')
     // Get input values
@@ -51,7 +51,29 @@ function generateBookCitation() {
 
     // Generate the citation
     const citation = book.generateCitation();
-    // alert(citation)
+
+    // Display the citation in the result area
+    document.getElementById('citationResult').innerText = citation;
+}
+
+function generateWebsiteCitation() {
+    // document.getElementById('citationResult').innerText = 'hello world'
+    // alert('hello')
+    // Get input values
+    const articleTitle = document.getElementById('articleTitle').value;
+    const authorFirst = document.getElementById('authorFirst').value;
+    const authorLast = document.getElementById('authorLast').value;
+    const date = document.getElementById('datePublished').value;
+    const websiteTitle = document.getElementById('websiteTitle').value;
+    const url = document.getElementById('url').value;
+
+    var datePublished = new Date(date);
+
+    // Create an instance of the Book class
+    const website = new Website(articleTitle, authorFirst, authorLast, websiteTitle, url, datePublished)
+
+    // Generate the citation
+    const citation = website.generateCitation();
 
     // Display the citation in the result area
     document.getElementById('citationResult').innerText = citation;
@@ -64,6 +86,8 @@ function openPage(pageName, elmnt, color) {
     for (i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
     }
+
+    // document.getElementById("citationresult").style.display = "none"
   
     // Remove the background color of all tablinks/buttons
     tablinks = document.getElementsByClassName("tablink");
@@ -73,10 +97,11 @@ function openPage(pageName, elmnt, color) {
   
     // Show the specific tab content
     document.getElementById(pageName).style.display = "block";
+    document.getElementById('citationResult').style.display = "block";
   
     // Add the specific color to the button used to open the tab content
     elmnt.style.backgroundColor = color;
   }
   
   // Get the element with id="defaultOpen" and click on it
-  document.getElementById("defaultOpen").click();
+//   document.getElementById("defaultOpen").click();

@@ -12,123 +12,122 @@
 
     <h1>Citation Generator</h1>
 
-    <button class="tablink" onclick="openPage('Book', this, 'red')">Book</button>
-    <button class="tablink" onclick="openPage('Website', this, 'green')">Website</button>
-    <button class="tablink" onclick="openPage('Journal', this, 'blue')">Journal</button>
+    <div class="grid-container">
 
-    <div id="Book" class="tabcontent">
-        <!-- Input fields for book properties -->
-        <label for="title">Title:</label>
-        <input type="text" id="title">
+        <div class="inputbox">
+            <button class="tablink" onclick="openPage('Book', this, 'red')">Book</button>
+            <button class="tablink" onclick="openPage('Website', this, 'green')">Website</button>
+            <button class="tablink" onclick="openPage('Journal', this, 'blue')">Journal</button>
 
-        <br>
+            <div id="Book" class="tabcontent">
+                <!-- Input fields for book properties -->
+                <label for="title">Title:</label>
+                <input type="text" id="title">
 
-        <label for="authorFirst">Author's first name:</label>
-        <input type="text" id="authorFirst">
+                <br>
 
-        <br>
-        <label for="authorLast">Author's last name:</label>
-        <input type="text" id="authorLast">
+                <label for="authorFirst">Author's first name:</label>
+                <input type="text" id="authorFirst">
 
-        <br>
+                <br>
+                <label for="authorLast">Author's last name:</label>
+                <input type="text" id="authorLast">
 
-        <label for="year">Year:</label>
-        <input type="text" id="year">
+                <br>
 
-        <br>
+                <label for="year">Year:</label>
+                <input type="text" id="year">
 
-        <label for="publisher">Publisher:</label>
-        <input type="text" id="publisher">
+                <br>
 
-        <br>
+                <label for="publisher">Publisher:</label>
+                <input type="text" id="publisher">
 
-        <!-- Button to generate citation -->
-        <button onclick="generateBookCitation()">Generate Citation</button>
-        <button onclick="clearForm()">Clear</button>
+                <br>
 
-        <hr>
-        <p id="citationResult"></p>
+                <!-- Button to generate citation -->
+                <button onclick="generateBookCitation()">Generate Citation</button>
+                <button onclick="clearForm()">Clear</button>
+
+                <!-- <hr>
+                <p id="citationResult"></p> -->
+            </div>
+
+            <div id="Website" class="tabcontent">
+                <!-- Input fields for book properties -->
+                <label for="articleTitle">Article title:</label>
+                <input type="text" id="articleTitle">
+
+                <br>
+
+                <label for="authorFirst">Author's first name:</label>
+                <input type="text" id="authorFirst">
+
+                <br>
+                <label for="authorLast">Author's last name:</label>
+                <input type="text" id="authorLast">
+
+                <br>
+
+                <label for="datePublished">Date published:</label>
+                <input type="date" id="datePublished">
+
+                <br>
+
+                <label for="websiteTitle">Website title:</label>
+                <input type="text" id="websiteTitle">
+
+                <br>
+
+                <label for="url">URL:</label>
+                <input type="text" id="url">
+
+                <br>
+
+                <!-- Button to generate citation -->
+                <button onclick="generateWebsiteCitation()">Generate Citation</button>
+                
+            </div>
+
+            <div id="Journal" class="tabcontent">
+                <!-- Input fields for book properties -->
+                <label for="title">Title:</label>
+                <input type="text" id="title">
+
+                <br>
+
+                <label for="authorFirst">Author's first name:</label>
+                <input type="text" id="authorFirst">
+
+                <br>
+                <label for="authorLast">Author's last name:</label>
+                <input type="text" id="authorLast">
+
+                <br>
+
+                <label for="year">Year:</label>
+                <input type="text" id="year">
+
+                <br>
+
+                <label for="publisher">Publisher:</label>
+                <input type="text" id="publisher">
+
+                <br>
+
+                <!-- Button to generate citation -->
+                <button onclick="generateBookCitation()">Generate Citation</button>
+
+            </div>
+        </div>  
+
+        <!-- Display area for generated citation -->
+        <div class="displaybox">
+            <h2>Citations</h2>
+            <p id="citationResult" class="citationcontent"></p>
+        </div>
+
     </div>
-
-    <div id="Website" class="tabcontent">
-        <!-- Input fields for book properties -->
-        <label for="articleTitle">Article title:</label>
-        <input type="text" id="articleTitle">
-
-        <br>
-
-        <label for="authorFirst">Author's first name:</label>
-        <input type="text" id="authorFirst">
-
-        <br>
-        <label for="authorLast">Author's last name:</label>
-        <input type="text" id="authorLast">
-
-        <br>
-
-        <label for="publicationDte">Date published:</label>
-        <input type="date" id="publicationDate">
-
-        <br>
-
-        <label for="websiteTitle">Website title:</label>
-        <input type="text" id="websiteTitle">
-
-        <br>
-
-        <label for="url">URL:</label>
-        <input type="text" id="url">
-
-        <br>
-
-        <!-- Button to generate citation -->
-        <button onclick="generateBookCitation()">Generate Citation</button>
-
-        <hr>
-        <p id="citationResult"></p>
-    </div>
-
-    <div id="Journal" class="tabcontent">
-        <!-- Input fields for book properties -->
-        <label for="title">Title:</label>
-        <input type="text" id="title">
-
-        <br>
-
-        <label for="authorFirst">Author's first name:</label>
-        <input type="text" id="authorFirst">
-
-        <br>
-        <label for="authorLast">Author's last name:</label>
-        <input type="text" id="authorLast">
-
-        <br>
-
-        <label for="year">Year:</label>
-        <input type="text" id="year">
-
-        <br>
-
-        <label for="publisher">Publisher:</label>
-        <input type="text" id="publisher">
-
-        <br>
-
-        <!-- Button to generate citation -->
-        <button onclick="generateBookCitation()">Generate Citation</button>
-
-        <hr>
-        <p id="citationResult"></p>
-    </div>
-
-
-    
-    <!-- <hr> -->
-
-
-    <!-- Display area for generated citation -->
-    <!-- <p id="citationResult"></p> -->
-
 
 </body>
 </html>

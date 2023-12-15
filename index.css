@@ -1,8 +1,11 @@
 /* Set height of body and the document to 100% to enable "full page tabs" */
 body, html {
     height: 100%;
-    margin: 0;
-    font-family: Arial;
+    /* font-family: Arial; */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #f4f4f4;
   }
   
   /* Style tab links */
@@ -15,7 +18,7 @@ body, html {
     cursor: pointer;
     padding: 14px 16px;
     font-size: 17px;
-    width: 25%;
+    width: 33%;
   }
   
   .tablink:hover {
@@ -26,21 +29,14 @@ body, html {
   .tabcontent {
     color: black;
     display: none;
-    padding: 100px 20px;
+    padding: 60px 20px;
     height: 100%;
   }
-  
-  /* #Book {background-color: red;}
-  #Website {background-color: green;}
-  #Journal {background-color: blue;} */
 
-  /* Add some basic styling to the body */
-body {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    margin: 20px;
-    background-color: #f4f4f4;
-}
+  .citationcontent {
+    display: none;
+  }
+
 
 /* Style the main heading */
 h1 {
@@ -93,4 +89,16 @@ button:hover {
     text-align: left;
     margin: 0;
     color: #333;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr; */
+    grid-gap: 20px;
+}
+
+.inputbox{
+    margin:0;
+    padding:0;
 }
