@@ -15,7 +15,7 @@
     <div class="grid-container">
 
         <div class="inputbox">
-            <button class="tablink" onclick="openPage('Book', this, 'red')">Book</button>
+            <button class="tablink" onclick="openPage('Book', this, 'red')" id="defaultOpen">Book</button>
             <button class="tablink" onclick="openPage('Website', this, 'green')">Website</button>
             <button class="tablink" onclick="openPage('Journal', this, 'blue')">Journal</button>
 
@@ -35,7 +35,7 @@
 
                 <br>
 
-                <label for="year">Year:</label>
+                <label for="year">Year published:</label>
                 <input type="text" id="year">
 
                 <br>
@@ -49,8 +49,6 @@
                 <button onclick="generateBookCitation()">Generate Citation</button>
                 <button onclick="clearForm()">Clear</button>
 
-                <!-- <hr>
-                <p id="citationResult"></p> -->
             </div>
 
             <div id="Website" class="tabcontent">
@@ -92,41 +90,56 @@
 
             <div id="Journal" class="tabcontent">
                 <!-- Input fields for book properties -->
-                <label for="title">Title:</label>
-                <input type="text" id="title">
+                <label for="journalArticleTitle">Article title:</label>
+                <input type="text" id="journalArticleTitle">
 
                 <br>
 
-                <label for="authorFirst">Author's first name:</label>
-                <input type="text" id="authorFirst">
+                <label for="journalAuthorFirst">Author's first name:</label>
+                <input type="text" id="journalAuthorFirst">
 
                 <br>
-                <label for="authorLast">Author's last name:</label>
-                <input type="text" id="authorLast">
-
-                <br>
-
-                <label for="year">Year:</label>
-                <input type="text" id="year">
+                
+                <label for="journalAuthorLast">Author's last name:</label>
+                <input type="text" id="journalAuthorLast">
 
                 <br>
 
-                <label for="publisher">Publisher:</label>
-                <input type="text" id="publisher">
+                <label for="journalYear">Year published:</label>
+                <input type="text" id="journalYear">
+
+                <br>
+
+                <label for="journalName">Journal Name:</label>
+                <input type="text" id="journalName">
+
+                <br>
+
+                <label for="volumeNumber">Volume Number:</label>
+                <input type="text" id="volumeNumber">                
+
+                <label for="issueNumber">Issue Number:</label>
+                <input type="text" id="issueNumber">
+
+                <br>
+
+                <label for="journalUrl">URL:</label>
+                <input type="text" id="journalUrl">
 
                 <br>
 
                 <!-- Button to generate citation -->
-                <button onclick="generateBookCitation()">Generate Citation</button>
+                <button onclick="generateJournalCitation()">Generate Citation</button>
                 <button onclick="clearForm()">Clear</button>
 
             </div>
         </div>  
 
         <!-- Display area for generated citation -->
-        <div class="displaybox">
+        <div class="displaybox" id="citationcontent">
             <h2>Citations</h2>
-            <p id="citationResult" class="citationcontent"></p>
+            <!-- <p id="citationResult" lass="citationcontent"></p> -->
+            
         </div>
 
     </div>
