@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -9,6 +9,104 @@
   </head>
   <body>
 	<script src="index.js"></script>
-    <header>This is my web app</header>
+    <header>Citation Generator</header>
+    <button onclick="generateCitation()">Generate Citation</button>
   </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Citation Generator</title>
+    <style>
+        /* Add some basic styling if needed */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- JavaScript code -->
+    <!-- <script>"index.js"</script> -->
+
+    <h1>Citation Generator</h1>
+
+    <!-- Input fields for book properties -->
+    <label for="title">Title:</label>
+    <input type="text" id="title">
+
+    <br>
+
+    <label for="authorFirst">Author's first name:</label>
+    <input type="text" id="authorFirst">
+
+    <br>
+    <label for="authorLast">Author's last name:</label>
+    <input type="text" id="authorLast">
+
+    <br>
+
+    <label for="year">Year:</label>
+    <input type="text" id="year">
+
+    <br>
+
+    <label for="publisher">Publisher:</label>
+    <input type="text" id="publisher">
+
+    <br>
+
+    <!-- Button to generate citation -->
+    <button onclick="generateCitation()">Generate Citation</button>
+
+    <hr>
+
+    <script>
+        class Book{
+            constructor(title, authorFirst, authorLast, year, publisher){
+                this.title = title
+                this.authorFirst = authorFirst
+                this.authorLast = authorLast
+                this.year = year
+                this.publisher = publisher
+            }
+
+            generateCitation(){
+                return `${this.authorLast}, ${this.authorFirst.charAt(0)}. (${this.year})). ${this.title}. ${this.publisher}.`
+                // String.format("%s, %c. (%s). %s. %s.", authorLast, authorFirst.charAt(0),
+                //         publicationYear, title, publisher);
+            }
+        }
+
+        function generateCitation() {
+            // document.getElementById('citationResult').innerText = 'hello world'
+            // alert('hello')
+            // Get input values
+            const title = document.getElementById('title').value;
+            const authorFirst = document.getElementById('authorFirst').value;
+            const authorLast = document.getElementById('authorLast').value;
+            const year = document.getElementById('year').value;
+            const publisher = document.getElementById('publisher').value;
+
+            // Create an instance of the Book class
+            const book = new Book(title, authorFirst, authorLast, year, publisher);
+
+            // Generate the citation
+            const citation = book.generateCitation();
+            // alert(citation)
+
+            // Display the citation in the result area
+            document.getElementById('citationResult').innerText = citation;
+        }
+    </script>
+
+    <!-- Display area for generated citation -->
+    <p id="citationResult"></p>
+
+
+</body>
 </html>
