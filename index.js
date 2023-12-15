@@ -8,7 +8,7 @@ class Book{
     }
 
     generateCitation(){
-        return `${this.authorLast}, ${this.authorFirst.charAt(0)}. (${this.year})). ${this.title}. ${this.publisher}.`
+        return `${this.authorLast}, ${this.authorFirst.charAt(0)}. (${this.year})). <em>${this.title}</em>. ${this.publisher}.`
         // String.format("%s, %c. (%s). %s. %s.", authorLast, authorFirst.charAt(0),
         //         publicationYear, title, publisher);
     }
@@ -26,7 +26,7 @@ class Website{
 
     generateCitation(){
         return `${this.authorLast}, ${this.authorFirst.charAt(0)}. (${this.datePublished.getFullYear()}, ${this.datePublished.getMonth()+1} ${this.datePublished.getDate()+1}). 
-        ${this.articleTitle}. ${this.websiteTitle}. ${this.url}`
+        <em>${this.articleTitle}</em>. ${this.websiteTitle}. ${this.url}`
     }
 
 }
@@ -53,7 +53,7 @@ function generateBookCitation() {
     const citation = book.generateCitation();
 
     // Display the citation in the result area
-    document.getElementById('citationResult').innerText = citation;
+    document.getElementById('citationResult').innerHTML = `<p>${citation}</p>`;
 }
 
 function generateWebsiteCitation() {
@@ -76,7 +76,7 @@ function generateWebsiteCitation() {
     const citation = website.generateCitation();
 
     // Display the citation in the result area
-    document.getElementById('citationResult').innerText = citation;
+    document.getElementById('citationResult').innerHTML = `<p>${citation}</p>`;
 }
 
 function openPage(pageName, elmnt, color) {
