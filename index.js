@@ -8,12 +8,37 @@ class Book{
     }
 
     generateCitation(){
-        return String.format("%s, %c. (%s). %s. %s.", authorLast, authorFirst.charAt(0),
-                publicationYear, title, publisher);
+        return `${this.authorLast}, ${this.authorFirst.charAt(0)}. (${this.year})). ${this.title}. ${this.publisher}.`
+        // String.format("%s, %c. (%s). %s. %s.", authorLast, authorFirst.charAt(0),
+        //         publicationYear, title, publisher);
     }
 }
 
-function generateCitation() {
+class Website{
+    constructor(articleTitle, authorFirst, authorLast, websiteTitle, url, datePublished){
+        this.articleTitle = articleTitle
+        this.authorFirst = authorFirst
+        this.authorLast = authorLast
+        this.websiteTitle = websiteTitle
+        this.url = url
+        this.datePublished = datePublished
+    }
+
+    generateCitation(){
+        return `${this.authorLast}, ${this.authorFirst.charAt(0)}. (${datePublished.getYear()}, ${datePublished.getMonth()} ${datePublished.getDayOfMonth()}). 
+        ${this.articleTitle}. ${this.websiteTitle}. ${this.url}`
+    }
+}
+
+function clearForm(){
+    var allInputs = document.querySelectorAll('input');
+    allInputs.forEach(singleInput => singleInput.value = '');
+}
+
+function generateBookCitation() {
+    console.log('ehh')
+    // document.getElementById('citationResult').innerText = 'hello world'
+    // alert('hello')
     // Get input values
     const title = document.getElementById('title').value;
     const authorFirst = document.getElementById('authorFirst').value;
@@ -26,11 +51,32 @@ function generateCitation() {
 
     // Generate the citation
     const citation = book.generateCitation();
+    // alert(citation)
 
     // Display the citation in the result area
-    document.getElementById('citationResult').innerHTML = `<p>${citation}</p>`;
+    document.getElementById('citationResult').innerText = citation;
 }
 
-// var book = Book('Gone with the Wind', 'Some', "Author", 1967, 'Penguin Random House')
-
-// document.write(book.generateCitation())
+function openPage(pageName, elmnt, color) {
+    // Hide all elements with class="tabcontent" by default */
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+  
+    // Remove the background color of all tablinks/buttons
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+  
+    // Show the specific tab content
+    document.getElementById(pageName).style.display = "block";
+  
+    // Add the specific color to the button used to open the tab content
+    elmnt.style.backgroundColor = color;
+  }
+  
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
