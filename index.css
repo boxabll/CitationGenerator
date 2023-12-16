@@ -17,7 +17,16 @@ body, html {
     cursor: pointer;
     padding: 14px 16px;
     font-size: 17px;
-    width: 33%;
+    width: 33.333%;
+    border-radius: 0;
+  }
+
+  .tablink:first-child {
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  .tablink:nth-child(3) {
+    border-radius: 0px 10px 10px 0px;
   }
   
   .tablink:hover {
@@ -123,4 +132,7 @@ button:hover {
 .copybutton {
     margin-top: 20px;
 }
-
+/* 
+#Book {background-color: red;}
+#Website {background-color: green;}
+#Journal {background-color: blue;} */
