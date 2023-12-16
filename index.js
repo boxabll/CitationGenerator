@@ -148,20 +148,21 @@ function clearForm(){
 
 function addCitationElement(citationText){
     const citationDiv = document.createElement("div");
+    citationDiv.className = "resultsgrid";
 
     const citationElement = document.createElement("p");
-    citationElement.innerHTML = `<p>${citationText}</p>`
+    citationElement.innerHTML = `${citationText}`
     citationElement.id = 'citationResult'
+    citationElement.className = "citationClass"
 
     const copyButton = document.createElement("button");
     const copyIcon = document.createElement("img");
     copyIcon.src = "copy-icon.svg";
     copyIcon.width = 15;
     copyIcon.height = 15;
+    copyButton.className = "copybutton"
     copyButton.appendChild(copyIcon);
     
-    // copyButton.onclick = function(){citationElement.select();
-    //                                 document.execCommand("copy");};
     copyButton.onclick = function(){
         const blob = new Blob([citationText], { type: 'text/html' });
         navigator.clipboard.write([
