@@ -28,8 +28,9 @@ body, html {
   .tabcontent {
     color: black;
     display: none;
-    padding: 60px 20px;
+    /* padding: 60px 20px; */
     height: 100%;
+    margin-top: 70px;
   }
 
   .citationcontent {
@@ -39,13 +40,18 @@ body, html {
 
 /* Style the main heading */
 h1 {
+    text-align: left;
     color: #333;
+}
+
+h2 {
+    text-align: left;
 }
 
 /* Style the input labels */
 label {
     display: block;
-    margin: 10px 0;
+    /* margin: 10px 0; */
     color: #555;
     text-align: left;
 }
@@ -93,7 +99,7 @@ button:hover {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 80px;
 }
 
 .inputbox{
@@ -117,7 +123,4 @@ button:hover {
 .copybutton {
     margin-top: 20px;
 }
-
-
-
 

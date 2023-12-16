@@ -73,8 +73,8 @@ function generateBookCitation() {
 function generateWebsiteCitation() {
     // Get input values
     const articleTitle = document.getElementById('articleTitle').value;
-    const authorFirst = document.getElementById('authorFirst').value;
-    const authorLast = document.getElementById('authorLast').value;
+    const authorFirst = document.getElementById('websiteAuthorFirst').value;
+    const authorLast = document.getElementById('websiteAuthorLast').value;
     const date = document.getElementById('datePublished').value;
     const websiteTitle = document.getElementById('websiteTitle').value;
     const url = document.getElementById('url').value;
