@@ -1,7 +1,6 @@
 /* Set height of body and the document to 100% to enable "full page tabs" */
 body, html {
     height: 100%;
-    /* font-family: Arial; */
     font-family: 'Arial', sans-serif;
     text-align: center;
     margin: 20px;
@@ -94,7 +93,6 @@ button:hover {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* grid-template-rows: 1fr 1fr; */
     grid-gap: 20px;
 }
 
@@ -105,5 +103,8 @@ button:hover {
 
 #citationResult , #copyButton {
     display:inline-block;
-    /* additional code */
-    }
+}
+
+
+
+

@@ -132,7 +132,7 @@ function openPage(pageName, elmnt, color) {
   
     // Show the specific tab content
     document.getElementById(pageName).style.display = "block";
-    document.getElementById('citationResult').style.display = "block";
+    document.getElementById('citationcontent').style.display = "block";
   
     // Add the specific color to the button used to open the tab content
     elmnt.style.backgroundColor = color;
@@ -171,8 +171,6 @@ function addCitationElement(citationText){
         ]);
     }
     copyButton.id = "copyButton"
-
-    
 
     citationDiv.appendChild(citationElement);
     citationDiv.appendChild(copyButton);
